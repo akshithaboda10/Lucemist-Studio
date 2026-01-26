@@ -1,7 +1,8 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Showcase from "./components/showcase";
+import Showcase from "./components/Showcase";
 import Footer from "./components/Footer";
+
 
 function App() {
   return (
