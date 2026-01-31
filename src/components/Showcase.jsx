@@ -1,61 +1,58 @@
 import { motion } from "framer-motion";
+import { Calendar, Palette, FileText } from "lucide-react";
 
 export default function Showcase() {
+    const items = [
+        {
+            icon: Calendar,
+            title: "Digital Planners",
+            description:
+                "Minimal daily, weekly, and wellness planners designed to bring gentle structure and clarity without pressure.",
+        },
+        {
+            icon: Palette,
+            title: "Printable Art & Affirmations",
+            description:
+                "Soft visual pieces and thoughtful words created to ground, comfort, and quietly uplift everyday spaces.",
+        },
+        {
+            icon: FileText,
+            title: "Canva Templates",
+            description:
+                "Calm, editable templates for creators and small brands who prefer human-centered, minimalist design.",
+        },
+    ];
+
     return (
-        <section id="services" className="bg-white py-24">
-            <div className="max-w-7xl mx-auto px-6">
-
-                <h2 className="text-3xl font-semibold text-center mb-16">
+        <section className="py-24">
+            <div className="max-w-4xl mx-auto px-6 text-center">
+                <motion.h2
+                    className="text-3xl font-medium mb-16"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                >
                     What We Create
-                </h2>
+                </motion.h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid md:grid-cols-3 gap-16">
+                    {items.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className="space-y-4"
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                        >
+                            <item.icon size={32} className="mx-auto text-gray-700" />
 
-                    {/* Card 1 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="border rounded-lg p-8 text-center hover:shadow-xl transition"
-                    >
-                        <div className="h-40 bg-gray-100 mb-6"></div>
-                        <h3 className="text-lg font-medium mb-2">Digital Art Prints</h3>
-                        <p className="text-sm text-gray-600">
-                            Minimal digital artworks inspired by light, mist, and quiet moments of calm.
-                        </p>
-                    </motion.div>
+                            <h3 className="text-lg font-medium">{item.title}</h3>
 
-                    {/* Card 2 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="border rounded-lg p-8 text-center hover:shadow-xl transition"
-                    >
-                        <div className="h-40 bg-gray-100 mb-6"></div>
-                        <h3 className="text-lg font-medium mb-2">Printable Affirmations</h3>
-                        <p className="text-sm text-gray-600">
-                            Thoughtfully designed affirmation cards created to bring clarity, peace, and softness into everyday life.
-                        </p>
-                    </motion.div>
-
-                    {/* Card 3 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="border rounded-lg p-8 text-center hover:shadow-xl transition"
-                    >
-                        <div className="h-40 bg-gray-100 mb-6"></div>
-                        <h3 className="text-lg font-medium mb-2">Mindful Visual Design</h3>
-                        <p className="text-sm text-gray-600">
-                            Gentle, intentional visuals crafted for brands and spaces rooted in calm and simplicity.
-                        </p>
-                    </motion.div>
-
+                            <p className="text-sm text-gray-600 leading-relaxed">
+                                {item.description}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

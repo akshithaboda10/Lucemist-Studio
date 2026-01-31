@@ -1,20 +1,25 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Showcase from "./components/Showcase";
 import Footer from "./components/Footer";
 
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Collection from "./pages/Collection";
+import Contact from "./pages/Contact";
 
-function App() {
+export default function App() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-20">
-        <Hero />
-        <Showcase />
-        <Footer />
-      </div>
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/collection" element={<Collection />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }
-
-export default App;
