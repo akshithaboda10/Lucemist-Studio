@@ -2,6 +2,219 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================================================
+   LUCEMIST COLOR TOKENS — COOL DIRECTION (DEFAULT LIGHT)
+===================================================== */
+:root {
+  /* TEXT */
+  --text-primary: #3F4A7A;
+  --text-secondary: #6A72B8;
+
+  /* BACKGROUNDS */
+  --bg-base: #F7FAFF;
+  --bg-soft: #EEF3FF;
+  --bg-card: #E6EEFF;
+  --bg-violet: #EEE9FF;
+
+  /* ACCENT */
+  --accent-soft: #FFF5C2;
+
+  /* BORDERS */
+  --border-soft: rgba(63, 74, 122, 0.15);
+}
+
+/* =====================================================
+   BASE
+===================================================== */
 body {
-  @apply bg-mist text-ink font-sans;
+  background-color: var(--bg-base);
+  color: var(--text-secondary);
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+.heading {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* =====================================================
+   BUTTON (SAFE IN BOTH MODES)
+===================================================== */
+.lucemist-button {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: #3F4A7A;
+  /* always readable */
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.lucemist-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  opacity: 0.95;
+}
+
+/* =====================================================
+   COLLECTION CARDS
+===================================================== */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+/* ================================
+   COLLECTION CARD — EMOTIONAL DEPTH
+================================ */
+.collection-card {
+  background:
+    linear-gradient(to bottom right,
+      rgba(255, 255, 255, 0.75),
+      var(--bg-card));
+
+  border: 1px solid var(--border-soft);
+  border-radius: 26px;
+  padding: 2.6rem;
+
+  box-shadow:
+    0 8px 20px rgba(63, 74, 122, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.collection-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(63, 74, 122, 0.14);
+}
+
+
+.price {
+  color: var(--text-primary);
+}
+
+.card-link {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(63, 74, 122, 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.card-link:hover {
+  border-color: var(--text-primary);
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   MIST BACKGROUNDS — LIGHT MODE
+===================================================== */
+.mist-hero {
+  background:
+    radial-gradient(circle at top,
+      #EEF3FF 0%,
+      #F7FAFF 70%);
+}
+
+.mist-flow {
+  background:
+    linear-gradient(to bottom,
+      #F7FAFF,
+      #EEF3FF,
+      #F7FAFF);
+}
+
+.mist-card {
+  background:
+    linear-gradient(to bottom right,
+      var(--bg-card),
+      var(--bg-base));
+}
+
+/* =====================================================
+   DARK MODE OVERRIDES
+===================================================== */
+.dark {
+  /* TEXT */
+  --text-primary: #F7FAFF;
+  --text-secondary: #C9D2FF;
+
+  /* BACKGROUNDS */
+  --bg-base: #121528;
+  --bg-soft: #181C36;
+  --bg-card: #1E2244;
+  --bg-violet: #23265A;
+
+  /* BORDERS */
+  --border-soft: rgba(247, 250, 255, 0.15);
+}
+
+.dark .collection-card {
+  background:
+    linear-gradient(to bottom right,
+      rgba(30, 34, 68, 0.9),
+      var(--bg-card));
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* =====================================================
+   MIST BACKGROUNDS — DARK MODE
+===================================================== */
+.dark .mist-hero {
+  background:
+    radial-gradient(circle at top,
+      #1E2244 0%,
+      #121528 70%);
+}
+
+.dark .mist-flow {
+  background:
+    linear-gradient(to bottom,
+      #121528,
+      #181C36,
+      #121528);
+}
+
+.dark .mist-card {
+  background:
+    linear-gradient(to bottom right,
+      #1E2244,
+      #181C36);
+}
+
+/* =====================================================
+   FOOTER (COMPACT)
+===================================================== */
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }

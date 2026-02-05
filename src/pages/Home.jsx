@@ -1,44 +1,67 @@
-import { motion } from "framer-motion";
-import { Calendar, Palette, FileText } from "lucide-react";
-
 export default function Home() {
     return (
-        <section className="px-8 py-24 text-center max-w-3xl mx-auto">
-            <motion.h1
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="font-serif text-4xl mb-6"
-            >
-                Designing calm for everyday life.
-            </motion.h1>
+        <main className="w-full overflow-hidden">
 
-            <p className="text-calm mb-10">
-                Lucemist Studio creates minimalist digital planners and templates to help
-                people move through life with clarity and intention.
-            </p>
+            {/* HERO */}
+            <section className="mist-hero pt-32 pb-24">
+                <div className="max-w-3xl mx-auto px-6 text-center">
 
-            <a
-                href="/collection"
-                className="text-accent text-sm underline underline-offset-4"
-            >
-                Explore the collection →
-            </a>
+                    <h1 className="font-serif text-4xl md:text-5xl text-[var(--text-primary)] mb-6 leading-tight">
+                        Designing calm for everyday life
+                    </h1>
 
-            <div className="mt-24 space-y-14">
-                <Feature icon={<Calendar />} title="Digital Planners" />
-                <Feature icon={<Palette />} title="Printable Art & Affirmations" />
-                <Feature icon={<FileText />} title="Canva Templates" />
-            </div>
-        </section>
-    );
-}
+                    <p className="text-[var(--text-secondary)] text-base md:text-lg leading-relaxed mb-10 text-center">
+                        Lucemist Studio creates minimalist digital products inspired by
+                        light, clarity, and emotional well-being.
+                    </p>
 
-function Feature({ icon, title }) {
-    return (
-        <div className="flex flex-col items-center gap-4">
-            <div className="text-calm">{icon}</div>
-            <h3 className="font-serif">{title}</h3>
-        </div>
+                    <a
+                        href="/collection"
+                        className="lucemist-button"
+                    >
+                        Explore the collection
+                    </a>
+
+                </div>
+            </section>
+
+            {/* WHAT WE CREATE */}
+            <section className="mist-flow py-24">
+                <div className="max-w-5xl mx-auto px-6 text-center">
+
+                    <h2 className="font-serif text-3xl text-[var(--text-primary)] mb-16">
+                        What Lucemist offers
+                    </h2>
+
+                    <div className="grid md:grid-cols-3 gap-16">
+                        {[
+                            {
+                                title: "Digital Planners",
+                                desc: "Calm, structured planners designed to support focus without pressure.",
+                            },
+                            {
+                                title: "Templates",
+                                desc: "Thoughtfully designed templates for creators and mindful professionals.",
+                            },
+                            {
+                                title: "Visual Systems",
+                                desc: "Minimal design systems that feel soft, modern, and emotionally balanced.",
+                            },
+                        ].map((item, i) => (
+                            <div key={i} className="mist-card rounded-3xl p-10">
+                                <h3 className="text-[var(--text-primary)] font-medium mb-4">
+                                    {item.title}
+                                </h3>
+                                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
     );
 }

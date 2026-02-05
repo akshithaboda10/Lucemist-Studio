@@ -1,19 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        "./index.html",
-        "./src/**/*.{js,jsx}",
-    ],
+    content: ["./index.html", "./src/**/*.{js,jsx}"],
     theme: {
         extend: {
             colors: {
-                mist: "#f7f5f2",
-                ink: "#1f2933",
-                calm: "#6b7280",
-                accent: "#7c6cff",
+                arctic: "#F7FAFF",
+                fog: "#EEF3FF",
+                drift: "#E6EEFF",
+                violet: "#EEE9FF",
+                ink: "#3F4A7A",
+                shadow: "#6A72B8",
+                sun: "#FFF5C2",
             },
             fontFamily: {
-                serif: ["Playfair Display", "serif"],
+                serif: ["Cormorant Garamond", "serif"],
                 sans: ["Inter", "sans-serif"],
             },
         },
