@@ -218,3 +218,118 @@ footer {
   font-size: 0.85rem;
   color: var(--text-secondary);
 }
+
+/* ========================================= */
+/* MOBILE POLISH — LUCEMIST STUDIO */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  /* ---------- Global spacing ---------- */
+  section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* ---------- Hero Section ---------- */
+  .home-hero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    text-align: center;
+  }
+
+  .home-hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.35;
+  }
+
+  .home-hero p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 90%;
+    margin: 1.2rem auto 0;
+  }
+
+  /* ---------- What We Create ---------- */
+  .home-create {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .home-create h2 {
+    font-size: 1.6rem;
+  }
+
+  /* ---------- Collection Section ---------- */
+  .collection-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .collection-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .collection-header p {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .collection-section .card {
+    padding: 1.8rem;
+  }
+
+  .collection-section .card h3 {
+    font-size: 1.1rem;
+  }
+
+  /* ---------- About Section ---------- */
+  .about-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  /* ---------- Contact Section ---------- */
+  .contact-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+}
